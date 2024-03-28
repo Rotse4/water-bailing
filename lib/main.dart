@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:water_bailing/home.dart';
+import 'package:water_bailing/login.dart';
+import 'package:water_bailing/register.dart';
 
 void main() {
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:  Home(),
+      home:  RegisterPage(),
     );
   }
 }
