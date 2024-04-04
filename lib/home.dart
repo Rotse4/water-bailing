@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:water_bailing/api/controllers.dart';
+import 'package:get/get.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
-
+  Home({super.key});
+  SubscriptionController subscriptionController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Water Bailing"),
+        title: Text("Water Billing"),
       ),
       body: Container(
         // padding: EdgeInsets.symmetric(vertical: 10),
@@ -25,7 +27,30 @@ class Home extends StatelessWidget {
                           "assets/images/header-mobile-Water01.jpg"),
                           fit: BoxFit.cover
                           )),
-                          
+                          child: Stack(
+                            alignment: Alignment.bottomCenter  ,
+                            children: [
+                              Container(
+                                padding: EdgeInsets.only(left: 10),
+                                child: Column(
+                                  // mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    SizedBox(height: 15,),
+                                    Text("Plan         :${subscriptionController.subList[0].amount.toString()}", style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold),),
+                                    Text("Total  : ${subscriptionController.subList[0].totalBought.toString()}",style: TextStyle(color: Colors.black, fontSize: 18, fontWeight: FontWeight.bold)),
+                                    Text("Used  : ${subscriptionController.subList[0].usedWate.toString()}", style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold)),
+                                    Text("Remaining:  ${subscriptionController.subList[0].availableWater.toString()}", style: TextStyle(color: Colors.black,fontSize: 18,fontWeight: FontWeight.bold)),
+                                    
+                                  ],
+                                ),
+                              ),
+                              // Container(
+                                
+                              //   child: ,
+                              // )
+                            ],
+                          ),
             ),
             Container(
               // ma
