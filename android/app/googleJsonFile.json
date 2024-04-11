@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "59614586993",
+    "project_id": "billingsystem-61b81",
+    "storage_bucket": "billingsystem-61b81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:59614586993:android:5cae1c7c8f7fc646a613d0",
+        "android_client_info": {
+          "package_name": "com.example.water_bailing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQpnYPM6ie9paMpFLLRg98D3elYkZQr28"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

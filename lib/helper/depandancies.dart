@@ -1,5 +1,4 @@
 import 'package:water_bailing/api/controllers.dart';
-import 'package:water_bailing/api/model.dart';
 
 import '../api/api_client.dart';
 import '../api/repo.dart';
