@@ -7,7 +7,9 @@ import 'package:get/get.dart';
 import 'package:water_bailing/api/controllers.dart';
 import 'package:water_bailing/authentication/auth_pages/login.dart';
 import 'package:water_bailing/authentication/controllers/auth_controller.dart';
+import 'package:water_bailing/faq.dart';
 import 'package:water_bailing/home.dart';
+import 'package:water_bailing/payment.dart';
 import 'helper/depandancies.dart' as dep;
 
 Future<void> main() async{
@@ -46,7 +48,7 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      // home:   LoginPage(),
+      // home:   Faqs(),
       home:   Home(),
     );
   }

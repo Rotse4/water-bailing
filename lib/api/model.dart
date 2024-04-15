@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 class SubModel {
   late List<Subscription> _subscription;
   List<Subscription> get subscription=> _subscription;

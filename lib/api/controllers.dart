@@ -9,28 +9,30 @@ class SubscriptionController extends GetxController {
   List<Subscription> _subList = [];
   List<Subscription> get subList => _subList;
    List<String> sdata=[];
-  var plan;
-  var total;
-  var used;
-  var remaining;
+
+    RxMap<String, dynamic> paymentMap= RxMap();
+
 
   SubscriptionController({required this.subscriptionRepo});
   Future<void> getSubs() async {
     Response? response = await subscriptionRepo.getData();
     print("this is the esponse ${response?.bodyString}");
     if (response?.statusCode == 200) {
-      // _subList.addAll(SubModel.fromJson(response?.body).subscription);
-       plan=Subscription.fromJson(response?.body).amount;
-       total=Subscription.fromJson(response?.body).totalBought;
-       used=Subscription.fromJson(response?.body).usedWate;
-       remaining=Subscription.fromJson(response?.body).availableWater;
-       print("Plan isss $plan");
+
+      _subList.addAll(SubModel.fromJson(response?.body).subscription);
+
        print(response?.body);
 
-      // print(_subList);
+      print("sublist $_subList");
       update();
     } else {
       print("user orders not found");
     }
+  }
+
+    Future<Response> orderNow(Map<String, dynamic> order) async {
+        var data= await subscriptionRepo.pay(paymentMap);
+  //  print(data.bodyString);
+   return data;
   }
 }

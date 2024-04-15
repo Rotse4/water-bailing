@@ -24,18 +24,15 @@ class ApiClient extends GetConnect implements GetxService {
     }
   }
 
-  Future<Response> postQuiz(String uri, dynamic body) async {
-    print("body $body");
-
+ Future<Response> postData(String uri, dynamic body) async {
+    print(uri);
     String jsonString = jsonEncode(body);
-      print(jsonString);
-    try {
-      Response response = await post(uri, body);
-      print("imejaribu");
+    try{
+      Response response=await post(uri, body);
       return response;
-    } catch (e) {
+    }catch(e){
       print("cached");
-      return Response(statusCode: 1, statusText: e.toString());
+      return Response(statusCode: 1,statusText: e.toString());
     }
   }
 }

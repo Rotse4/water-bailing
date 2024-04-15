@@ -12,4 +12,8 @@ class SubscriptionRepo extends GetxService{
     // print(url)
     return data;
   }
+
+    Future<Response> pay(Map<dynamic, dynamic> paymentMa) async {
+    return await apiClient.postData(AppConstants.PAY_URL, paymentMa);
+  }
 }

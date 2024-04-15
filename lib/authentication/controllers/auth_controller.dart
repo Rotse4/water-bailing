@@ -90,6 +90,7 @@ class AuthController extends GetxController {
           style: TextStyle(color: Colors.white),
         ),
       );
+      print(FirebaseAuth.instance.currentUser);
       return;
     }
 
